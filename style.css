@@ -1,0 +1,147 @@
+body {
+	font-family: "proxima-nova", sans-serif;
+	line-height: 1.25;
+	color: #222;
+}
+
+header, section {
+	margin-bottom: 45px;
+}
+
+a:link, a:visited {
+	color: #222;
+}
+
+a:hover, a:active {
+	color: blue;
+	text-decoration: underline;
+}
+
+p, figcaption {
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "calluna", serif;
+	font-weight: 100;
+}
+
+h1 strong, h2 strong {
+	font-weight: 900;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+header {
+	width: 100%;
+	background: #eee;
+	padding: 2em 0;
+}
+
+header .content {
+	margin-top: 100px;
+}
+
+.social {
+	display: block;
+	list-style-type: none;
+	margin: 45px 0 0 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.social li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	width: 24%;
+
+}
+
+.social a:link, .social a:visited {
+	text-decoration: none;
+}
+
+.social i {
+	text-decoration: none;
+	margin-bottom: .25em;
+}
+
+.project {
+	margin: 0 0 15px;
+}
+
+.project p:first-child {
+	margin-top: 0;
+}
+
+.gallery figure {
+	padding: 0;
+	margin: 0;
+}
+
+.gallery figcaption, .gallery .hidden {
+	display: none;
+}
+
+.newsletter {
+	background: #eee;
+	padding: 15px;
+}
+
+.newsletter h2 {
+	margin: 0;
+	font-family: "proxima-nova", sans-serif;
+	font-weight: 900;
+	font-size: 1em;
+}
+
+.newsletter label {
+	display: block;
+	margin-bottom: 15px;
+}
+
+.newsletter input {
+	width: auto;
+	display: inline-block;
+	line-height: 1em;
+	padding: .5em .75em;
+	margin: 0;
+}
+
+.newsletter input[type="submit"] {
+	border: 3px solid #222;
+	font-weight: 900;
+	background: transparent;
+}
+
+.newsletter input[type="submit"]:hover {
+	border: 3px solid blue;
+	color: blue;	
+}
+
+.projects-more p span {
+	line-height: 50px;
+	vertical-align: top;
+}
+
+/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
