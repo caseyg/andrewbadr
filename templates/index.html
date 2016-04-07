@@ -22,7 +22,7 @@
 					<img src="/andrew-badr.jpg" width="160" height="160" alt="Andrew Badr">
 				</div>
 				<div class="content six columns">
-					<h1><strong>Andrew Badr</strong> makes technology and art in NYC, with a focus on text and interactivity.</h1>
+					<h1><strong>Andrew Badr</strong> is a web developer, creative technologist, and poetry student in NYC.</h1>
 					<ul class="social">
 						<li><a href=""><i class="fa fa-2x fa-twitter"></i><br> Twitter</a></li>
 						<li><a href=""><i class="fa fa-2x fa-github"></i><br> Github</a></li>
@@ -35,46 +35,27 @@
 	</header>
 	<main class="container">
 		<section class="projects-featured">
-			<h2><strong>Projects</strong> I've made or helped with. <em>These are four favorites:</em></h2>
+			<h2><strong>Featured Work</strong></h2>
 
+      {% for p in featured_projects %}
 			<div class="project row">
 				<div class="gallery six columns" itemscope itemtype="http://schema.org/ImageGallery">
-
+          {% for i in p.images %}
 					<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-						<a href="http://placehold.it/1000x750" itemprop="contentUrl" data-size="1000x750">
-							<img src="http://placehold.it/465x349" itemprop="thumbnail" alt="Image description" />
+            <a href="{{ i.size_1000_750.url }}" itemprop="contentUrl" data-size="1000x750">
+              <img src="{{ i.size_465_349.url }}" itemprop="thumbnail" alt="Image description" />
 						</a>
-						<figcaption itemprop="caption description">Image caption</figcaption>
+            <!--
+            <figcaption itemprop="caption description">{{ i.caption }}</figcaption>
+            -->
 					</figure>
-
-					<figure class="hidden" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-						<a href="http://placehold.it/1000x750" itemprop="contentUrl" data-size="1000x750">
-							<img src="http://placehold.it/465x349" itemprop="thumbnail" alt="Image description" />
-						</a>
-						<figcaption itemprop="caption description">Image caption</figcaption>
-					</figure>
-
-					<figure class="hidden" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-						<a href="http://placehold.it/1000x750" itemprop="contentUrl" data-size="1000x750">
-							<img src="http://placehold.it/465x349" itemprop="thumbnail" alt="Image description" />
-						</a>
-						<figcaption itemprop="caption description">Image caption</figcaption>
-					</figure>
-
-					<figure class="hidden" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-						<a href="http://placehold.it/1000x750" itemprop="contentUrl" data-size="1000x750">
-							<img src="http://placehold.it/465x349" itemprop="thumbnail" alt="Image description" />
-						</a>
-						<figcaption itemprop="caption description">Image caption</figcaption>
-					</figure>
-
+          {% endfor %}
 				</div>
-
 				<div class="six columns">
-					<p><a href=""><strong>Deconditioning Stickers</strong></a> look like the notification symbols from Facebook, Instagram, and other apps.</p>
-					<p>By sticking this imagery out of context, the deep emotional training to tap on those little numbers is undermined—or at least diverted for your amusement.</p>
+          {{ p.description_html|safe }}
 				</div>
 			</div>
+      {% endfor %}
 
 			<div class="project row">
 				<div class="gallery six columns" itemscope itemtype="http://schema.org/ImageGallery">
@@ -222,7 +203,7 @@
 					<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
 					<!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-					<!-- element will get class pswp__preloader--active when preloader is running -->
+					<!-- element will get class pswp__preloader active when preloader is running -->
 					<div class="pswp__preloader">
 						<div class="pswp__preloader__icn">
 						  <div class="pswp__preloader__cut">
