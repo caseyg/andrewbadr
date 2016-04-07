@@ -47,9 +47,12 @@ def process_featured_image(image_path):
     for width, height in IMAGE_OUTPUT_SIZES:
         new_filename = "%s_%d_%d.jpg" % (base , width, height)
         new_filepath = os.path.join(outdir, new_filename)
-        sized = im.resize((width, height)).convert('RGB') # ensure RGB for JPEG
-        print "Writing", new_filepath, "..."
-        sized.save(new_filepath, "JPEG")
+        if os.path.exists(new_filepath):
+            print "Existing", new_filepath, "..."
+        else:
+            print "Writing", new_filepath, "..."
+            sized = im.resize((width, height)).convert('RGB') # ensure RGB for JPEG
+            sized.save(new_filepath, "JPEG")
         result['size_%d_%d' % (width, height)] = {
             'url': '%s/%s' % (STATIC_OUTPUT_DIR, new_filename)
         }
