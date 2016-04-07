@@ -41,7 +41,7 @@
       <div class="project row">
         <div class="gallery six columns" itemscope itemtype="http://schema.org/ImageGallery">
           {% for i in p.images %}
-          <figure {% if not loop.first %}class="hidden" %} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <figure {% if not loop.first %}class="hidden" {% endif %} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
             <a href="{{ i.size_1000_750.url }}" itemprop="contentUrl" data-size="1000x750">
               <img src="{{ i.size_465_349.url }}" itemprop="thumbnail" alt="Image description" />
             </a>
