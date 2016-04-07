@@ -1,0 +1,31 @@
+Big:
+    decostick:
+    ywot:
+    thefirstbadman:
+    hyper:
+ 
+Small: # "Smaller Projects, Press, Workplaces, Affiliations
+    amore:
+        name: "Amore Explainer"
+    analog-go:
+        name: "Analog Go"
+    bitcoin-press: # Split this up
+        name: "Bitcoin quotes"
+    disqus:
+        name: "Disqus"
+    fornowband:
+        name: "ForNowBand.org"
+    friendship:
+        name: "POOOF"
+    joanna:
+        name: "Joanna Newsom Lyrics"
+    newyorker:
+        name: "Caption Contest"
+    oysters:
+        name: "Slurp Champ"
+    scribble:
+        name: "Scribble"
+    sfpc:
+        name: "SFPC"
+    zerocater:
+        name: "ZeroCater"
