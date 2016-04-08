@@ -22,6 +22,19 @@ def here(*args):
     path = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(path, *args)
 
+# From https://stackoverflow.com/questions/5121931/in-python-how-can-you-load-yaml-mappings-as-ordereddicts
+from collections import OrderedDict
+def ordered_load_yaml(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
+    class OrderedLoader(Loader):
+        pass
+    def construct_mapping(loader, node):
+        loader.flatten_mapping(node)
+        return object_pairs_hook(loader.construct_pairs(node))
+    OrderedLoader.add_constructor(
+        yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
+        construct_mapping)
+    return yaml.load(stream, OrderedLoader)
+
 #featured_projects = [
 #    'description_html': d,
 #    {
@@ -105,7 +118,8 @@ def load_small_project(project_name, project_data):
 def load_project_data():
     featured_projects = []
     small_projects = []
-    data = yaml.load(open(here('projects', 'projects.yaml')).read())
+    yaml_data = open(here('projects', 'projects.yaml')).read()
+    data = ordered_load_yaml(yaml_data)
     for project_name in data['Featured']:
         featured_projects.append(load_featured_project(project_name))
     for project_name, project_data in data['Small'].items():
