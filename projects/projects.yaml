@@ -4,28 +4,31 @@ Featured:
         #    thefirstbadman:
         #    hyper:
  
-        #Small: # "Smaller Projects, Press, Workplaces, Affiliations
-        #    amore:
-        #        name: "Amore Explainer"
-        #    analog-go:
-        #        name: "Analog Go"
-        #    bitcoin-press: # Split this up
-        #        name: "Bitcoin quotes"
-        #    disqus:
-        #        name: "Disqus"
-        #    fornowband:
-        #        name: "ForNowBand.org"
-        #    friendship:
-        #        name: "POOOF"
-        #    joanna:
-        #        name: "Joanna Newsom Lyrics"
-        #    newyorker:
-        #        name: "Caption Contest"
-        #    oysters:
-        #        name: "Slurp Champ"
-        #    scribble:
-        #        name: "Scribble"
-        #    sfpc:
-        #        name: "SFPC"
-        #    zerocater:
-        #        name: "ZeroCater"
+Small: # "Smaller Projects, Press, Workplaces, Affiliations
+    amore:
+        text: "Amore Explainer"
+        url: "https://twitter.com/amore_explainer"
+#    analog-go:
+#        text: "Analog Go"
+#        url: "https://github.com/reverie/analog-go"
+#    bitcoin-press: # Split this up
+#        text: "Bitcoin quotes"
+#    disqus:
+#        text: "Disqus"
+#    fornowband:
+#        text: "ForNowBand.org"
+#    friendship:
+#        text: "POOOF"
+#    joanna:
+#        text: "Joanna Newsom Lyrics"
+#    newyorker:
+#        text: "Caption Contest"
+#    oysters:
+#        text: "Slurp Champ"
+#    scribble:
+#        text: "Scribble"
+#    sfpc:
+#        text: "SFPC"
+#    zerocater:
+#        text: "ZeroCater"
+#

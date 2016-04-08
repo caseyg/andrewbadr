@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>Andrew Badr</title>
-  <meta name="description" content="Andrew Badr makes technology and art in NYC, with a focus on text and interactivity.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://use.typekit.net/hla3vse.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -22,12 +21,12 @@
           <img src="/andrew-badr.jpg" width="160" height="160" alt="Andrew Badr">
         </div>
         <div class="content six columns">
-          <h1><strong>Andrew Badr</strong> is a web developer, creative technologist, and poetry student in NYC.</h1>
+          <h1><strong>Andrew Badr</strong> is a web developer, creative technologist, and poetry student.</h1>
           <ul class="social">
-            <li><a href=""><i class="fa fa-2x fa-twitter"></i><br> Twitter</a></li>
-            <li><a href=""><i class="fa fa-2x fa-github"></i><br> Github</a></li>
-            <li><a href=""><i class="fa fa-2x fa-envelope"></i><br> Email</a></li>
-            <li><a href=""><i class="fa fa-2x fa-lock"></i><br> PGP Key</a></li>
+            <li><a href="https://twitter.com/andrewbadr"><i class="fa fa-2x fa-twitter"></i><br>Twitter</a></li>
+            <li><a href="mailto:andrewbadr@gmail.com"><i class="fa fa-2x fa-envelope"></i><br>Email</a></li>
+            <li><a href="https://github.com/reverie"><i class="fa fa-2x fa-github"></i><br>Github</a></li>
+            <li><a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x5491BA1031EB8F02"><i class="fa fa-2x fa-lock"></i><br>PGP</a></li>
           </ul>
         </div>
       </div>
@@ -111,28 +110,16 @@
       </form>
     </section>
     <section class="projects-more">
-      <h2>More Projects</h2>
+      <h2>Smaller Projects, Press, Workplaces, Affiliations</h2>
       <p>
+        {% for p in small_projects %}
         <span>
-          <img src="http://placehold.it/50x50">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          {% if p.link %}<a href="{{ p.link }}">{% endif %}
+          <img src="{{ p.img_url }}">
+          {{ p.text }}
+          {% if p.link %}</a>{% endif %}
         </span>
-        <span>
-          <img src="http://placehold.it/50x50">
-          In tempor justo neque, eget cursus purus facilisis ut.
-        </span>
-        <span>
-          <img src="http://placehold.it/50x50">
-          Fusce pretium dictum eleifend.
-        </span>
-        <span>
-          <img src="http://placehold.it/50x50">
-          Donec eget lectus at quam fringilla euismod.
-        </span>
-        <span>
-          <img src="http://placehold.it/50x50">
-          Vivamus felis eros, mollis ut mi nec, ornare feugiat nisi.
-        </span>
+        {% endfor %}
       </p>
     </section>
   </main>
