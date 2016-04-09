@@ -66,7 +66,7 @@ def process_featured_image(image_path):
         else:
             print "Writing", new_filepath, "..."
             im = Image.open(image_path)
-            sized = im.resize((width, height)).convert('RGB') # ensure RGB for JPEG
+            sized = im.resize((width, height), Image.ANTIALIAS).convert('RGB') # ensure RGB for JPEG
             sized.save(new_filepath, "JPEG")
         result['size_%d_%d' % (width, height)] = {
             'url': '%s/%s' % (STATIC_OUTPUT_DIR, new_filename)
@@ -107,7 +107,7 @@ def load_small_project(project_name, project_data):
     else:
         print "Writing", new_filepath, "..."
         im = Image.open(image_path)
-        sized = im.resize((width, height)).convert('RGB') # ensure RGB for JPEG
+        sized = im.resize((width, height), Image.ANTIALIAS).convert('RGB') # ensure RGB for JPEG
         sized.save(new_filepath, "JPEG")
     return {
         'img_url': '%s/%s' % (STATIC_OUTPUT_DIR, new_filename),

@@ -1,10 +1,10 @@
 Featured:
     decostick:
-        #    ywot:
-        #    thefirstbadman:
-        #    hyper:
+    thefirstbadman:
+    ywot:
+    hyper:
  
-Small: # "Smaller Projects, Press, Workplaces, Affiliations
+Small:
     amore:
         text: "Amore Explainer"
         url: "https://twitter.com/amore_explainer"
@@ -32,3 +32,4 @@ Small: # "Smaller Projects, Press, Workplaces, Affiliations
 #    zerocater:
 #        text: "ZeroCater"
 #
+# btc meetup
