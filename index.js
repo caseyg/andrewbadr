@@ -95,7 +95,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
         if(index >= 0) {
             // open PhotoSwipe if valid index found
-            openPhotoSwipe( index, clickedGallery );
+            openPhotoSwipe( index, clickedGallery, true );
         }
         return false;
     };
@@ -149,8 +149,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                     rect = thumbnail.getBoundingClientRect(); 
 
                 return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-            }
-
+            },
+            hideAnimationDuration: 0
         };
 
         // PhotoSwipe opened from URL
