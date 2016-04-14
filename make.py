@@ -8,15 +8,12 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image
 
-IMAGE_OUTPUT_SIZES = [
-    # Width, Height
-    (1000, 750),
-    (465, 349),
-]
+#                           Width, Height 
+FEATURED_THUMBNAIL_SIZE =   (464, 348) # 'featured_thumb'
+FEATURED_MAX_SIZE =         (1000, 750) # 'featured'
+SMALL_IMAGE_SIZE =          (50, 50) # 'small'
 
-SMALL_IMAGE_SIZE = (50, 50)
-
-STATIC_OUTPUT_DIR = '_gen_homepage_static'
+STATIC_OUTPUT_DIR = '_gen_homepage_static' # This is a folder name, not a path
 
 def here(*args):
     path = os.path.dirname(os.path.abspath(__file__))
@@ -37,57 +34,72 @@ def ordered_load_yaml(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict)
 
 #featured_projects = [
 #    'description_html': d,
-#    {
-#        'images': [
-#            {
-#                'size_1000_750': {
-#                    'url': 'http://placehold.it/1000x750',
-#                },
-#                'size_465_349': {
-#                    'url': 'http://placehold.it/465x349',
-#                },
-#                'caption': '',
-#            }
-#
-#        ],
-#    },
+#    'thumb_url': '...',
+#    'image_urls': ['...',]
 #]
 
-def process_featured_image(image_path):
+def ratio_matches((w1, h1), (w2, h2)):
+    print w1*h2, w2*h1
+    print w1*h2 == w2*h1
+    return w1*h2 == w2*h1
+
+def process_image(project_name, image_path, size_name):
     outdir = here(STATIC_OUTPUT_DIR)
-    result = {'caption': ''} # captions later?
     _, filename = os.path.split(image_path)
     base, _ = os.path.splitext(filename)
-    for width, height in IMAGE_OUTPUT_SIZES:
-        new_filename = "%s_%d_%d.jpg" % (base, width, height)
-        new_filepath = os.path.join(outdir, new_filename)
-        if os.path.exists(new_filepath):
-            print "Existing", new_filepath, "..."
+    new_filename = "%s_%s_%s.jpg" % (project_name, base, size_name)
+    new_filepath = os.path.join(outdir, new_filename)
+    if os.path.exists(new_filepath):
+        print "Existing", new_filepath, "..."
+        width, height = Image.open(new_filepath).size
+    else:
+        print "Writing", new_filepath, "..."
+        im = Image.open(image_path)
+        size = {
+            'featured_thumb': FEATURED_THUMBNAIL_SIZE,
+            'featured': FEATURED_MAX_SIZE,
+            'small': SMALL_IMAGE_SIZE,
+        }[size_name]
+        if size_name in ('featured_thumb', 'small'):
+            # Assert size matches
+            assert ratio_matches(im.size, size)
         else:
-            print "Writing", new_filepath, "..."
-            im = Image.open(image_path)
-            sized = im.resize((width, height), Image.ANTIALIAS).convert('RGB') # ensure RGB for JPEG
-            sized.save(new_filepath, "JPEG")
-        result['size_%d_%d' % (width, height)] = {
-            'url': '%s/%s' % (STATIC_OUTPUT_DIR, new_filename)
-        }
-    return result
+            assert size_name == 'featured' #:>
+        width, height = size
+        im.thumbnail(size, Image.ANTIALIAS)
+        im = im.convert('RGB') # RGB for JPEG
+        im.save(new_filepath, "JPEG")
+    url = os.path.join(STATIC_OUTPUT_DIR, new_filename)
+    return url, width, height
 
 
 def load_featured_project(project_name):
     md_path = here('projects', 'descriptions', project_name + '.md')
     with codecs.open(md_path, 'r', 'utf8') as f:
         description = markdown.markdown(f.read())
-    images = []
     image_dir = here('projects', 'images', project_name)
 
+    # load the small 4x3 thumbnail
+    thumb_path = os.path.join(image_dir, 'thumb.jpg')
+    thumb_url, _, _ = process_image(project_name, thumb_path, 'featured_thumb')
+
+    # Load all the big images
+    images = []
     # This sorted() is important. We use alphabetic naming
     # to control the display order.
     for filename in sorted(os.listdir(image_dir)):
+        if filename == 'thumb.jpg':
+            continue
         image_path = os.path.join(image_dir, filename)
-        image_data = process_featured_image(image_path)
-        images.append(image_data)
+        url, w, h = process_image(project_name, image_path, 'featured')
+        images.append({
+            'url': url,
+            'width': w,
+            'height': h
+        })
+
     return {
+        'thumb_url': thumb_url,
         'description_html': description,
         'images': images,
     }
@@ -97,20 +109,9 @@ def load_small_project(project_name, project_data):
     images = os.listdir(image_dir)
     assert len(images) == 1 # exactly 1 image per small project
     image_path = os.path.join(image_dir, images[0])
-    base, _ = os.path.splitext(images[0])
-    outdir = here(STATIC_OUTPUT_DIR)
-    width, height = SMALL_IMAGE_SIZE
-    new_filename = "%s_%d_%d.jpg" % (base, width, height)
-    new_filepath = os.path.join(outdir, new_filename)
-    if os.path.exists(new_filepath):
-        print "Existing", new_filepath, "..."
-    else:
-        print "Writing", new_filepath, "..."
-        im = Image.open(image_path)
-        sized = im.resize((width, height), Image.ANTIALIAS).convert('RGB') # ensure RGB for JPEG
-        sized.save(new_filepath, "JPEG")
+    url, _, _ = process_image(project_name, image_path, 'small')
     return {
-        'img_url': '%s/%s' % (STATIC_OUTPUT_DIR, new_filename),
+        'img_url': url,
         'text': project_data['text'],
         'link': project_data.get('url'),
     }
