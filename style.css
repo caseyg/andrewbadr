@@ -13,8 +13,7 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-	color: blue;
-	text-decoration: underline;
+  color: #009;
 }
 
 p, figcaption {
@@ -124,9 +123,18 @@ header .content {
 	color: blue;	
 }
 
+.projects-more a {
+  display: inline-block; /* bigger target */
+  text-decoration: none;
+}
+
 .projects-more p span {
 	line-height: 50px;
 	vertical-align: top;
+}
+
+.projects-more p span.name {
+  font-variant: small-caps;
 }
 
 /* Mobile first queries */

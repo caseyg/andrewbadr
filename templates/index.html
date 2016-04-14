@@ -18,10 +18,13 @@
     <div class="container">
       <div class="row">
         <div class="six columns">
+          <!--
           <img src="/andrew-badr.jpg" width="160" height="160" alt="Andrew Badr">
+          -->
+          &nbsp;
         </div>
         <div class="content six columns">
-          <h1><strong>Andrew Badr</strong> is a web developer, creative technologist, and poetry student.</h1>
+          <h1><strong>Andrew Badr</strong> is a web developer, creative technologist, and poetry student in NYC.</h1>
           <ul class="social">
             <li><a href="https://twitter.com/andrewbadr"><i class="fa fa-2x fa-twitter"></i><br>Twitter</a></li>
             <li><a href="mailto:andrewbadr@gmail.com"><i class="fa fa-2x fa-envelope"></i><br>Email</a></li>
@@ -61,15 +64,6 @@
       </div>
       {% endfor %}
     </section>
-    <section class="newsletter">
-      <h2>Andrew's Updates</h2>
-      <form action="https://tinyletter.com/andrewbadr" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/andrewbadr', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
-        <label for="tlemail">News about Deconditioning Stickers, Your World of Text, and other projects.</label>
-        <input type="email" name="email" id="tlemail" placeholder="you@example.com">
-        <input type="hidden" value="1" name="embed">
-        <input type="submit" value="Subscribe">
-      </form>
-    </section>
     <section class="projects-more">
       <h2>Smaller Projects, Press, Workplaces, Affiliations</h2>
       <p>
@@ -77,11 +71,22 @@
         {% if p.link %}<a href="{{ p.link }}">{% endif %}
         <span>
           <img src="{{ p.img_url }}">
-          {{ p.text }}
+          <span class="name">{{ p.text }}</span>
         </span>
         {% if p.link %}</a>{% endif %}
         {% endfor %}
       </p>
+    </section>
+    <section class="row">
+      <div class="newsletter six columns">
+        <h2>Mailing List</h2>
+        <form action="https://tinyletter.com/andrewbadr" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/andrewbadr', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+          <label for="tlemail">I email my personal mailing list just a few times a year. You'll get major project announcements and a bit on what I've been thinking about.</label>
+          <input type="email" name="email" id="tlemail" placeholder="you@example.com">
+          <input type="hidden" value="1" name="embed">
+          <input type="submit" value="Subscribe">
+        </form>
+      </div>
     </section>
   </main>
 
