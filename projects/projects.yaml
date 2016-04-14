@@ -1,35 +1,69 @@
 Featured:
     decostick:
     thefirstbadman:
-        #    ywot:
-        #    hyper:
+    ywot:
+    hyper:
  
 Small:
+    hunter:
+        text: "Hunter MFA"
+        url: "http://www.hunter.cuny.edu/main/"
     amore:
         text: "Amore Explainer"
         url: "https://twitter.com/amore_explainer"
-#    analog-go:
-#        text: "Analog Go"
-#        url: "https://github.com/reverie/analog-go"
-#    bitcoin-press: # Split this up
-#        text: "Bitcoin quotes"
-#    disqus:
-#        text: "Disqus"
-#    fornowband:
-#        text: "ForNowBand.org"
-#    friendship:
-#        text: "POOOF"
-#    joanna:
-#        text: "Joanna Newsom Lyrics"
-#    newyorker:
-#        text: "Caption Contest"
-#    oysters:
-#        text: "Slurp Champ"
-#    scribble:
-#        text: "Scribble"
-#    sfpc:
-#        text: "SFPC"
-#    zerocater:
-#        text: "ZeroCater"
-#
-# btc meetup
+    sfpc:
+        text: "SFPC"
+        url: "http://sfpc.io/"
+    scribble:
+        text: "Scribble"
+        url: "http://www.andrewbadr.com/files/scribble/"
+    friendship:
+        text: "Friendship Protocol"
+        url: "https://npdoty.name/friendship/friendship.html"
+    bloomgberg-bitcoin-press:
+        text: "Bitcoin Quote"
+        url: "http://www.bloomberg.com/news/articles/2014-03-31/what-your-accountant-thinks-about-your-bitcoins"
+    fornowband:
+        text: "For Now"
+        url: "http://www.fornowband.org/"
+    memekit:
+        text: "MemeKit"
+        url: "http://www.memekit.com/"
+    joanna: 
+        # make featured??
+        text: "Joanna Newsom Lyrics"
+        url: "http://joannanewsomlyrics.com/"
+    analog-go:
+        text: "Analog Go"
+        url: "https://github.com/reverie/analog-go"
+    oysters:
+        text: "Slurp Champ"
+        url: "http://sf.eater.com/2011/6/15/6674805/slurp-champ-downs-105-oysters-at-woodhouse-fish-co#4290236"
+    zerocater:
+        text: "ZeroCater"
+        url: "https://zerocater.com/"
+    newyorker:
+        text: "Caption Contest"
+        url: "http://archives.newyorker.com/?iid=40875&startpage=page0000116#folio=110"
+    meetup:
+        text: "Bitcoin Meetup"
+        url: "http://www.meetup.com/San-Francisco-Bitcoin-Social/"
+    disqus:
+        text: "Disqus"
+        url: "https://disqus.com/"
+    illinois:
+        text: "CS@UIUC"
+        url: "https://cs.illinois.edu/"
+    bugtraq:
+        text: "Wolfram Bugtraq"
+        url: "http://seclists.org/bugtraq/2002/Jun/180"
+
+# Not including:
+# - faxins
+# - other sfpc projects
+# - other bitcoin press
+# - links to regular or crypto blog
+# - seddit
+# - fabfile, flowgram OS
+# - autolib
+# - second trillion
