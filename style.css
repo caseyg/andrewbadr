@@ -126,6 +126,12 @@ header .content {
 .projects-more a {
   display: inline-block; /* bigger target */
   text-decoration: none;
+  line-height: 0; /* Get rid of space at bottom for hover */
+  padding-right: .5em
+}
+
+.projects-more a:hover {
+  background-color: #fcfcff;
 }
 
 .projects-more p span {

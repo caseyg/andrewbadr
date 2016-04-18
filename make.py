@@ -107,8 +107,11 @@ def load_featured_project(project_name):
 def load_small_project(project_name, project_data):
     image_dir = here('projects', 'images', project_name)
     images = os.listdir(image_dir)
-    assert len(images) == 1 # exactly 1 image per small project
-    image_path = os.path.join(image_dir, images[0])
+    if not images:
+        image_path = './default_small.png'
+    else:
+        assert len(images) == 1 # exactly 1 image per small project
+        image_path = os.path.join(image_dir, images[0])
     url, _, _ = process_image(project_name, image_path, 'small')
     return {
         'img_url': url,
