@@ -64,10 +64,10 @@ def process_image(project_name, image_path, size_name):
             assert ratio_matches(im.size, size)
         else:
             assert size_name == 'featured' #:>
-        width, height = size
         im.thumbnail(size, Image.ANTIALIAS)
         #im = im.convert('RGB') # RGB for JPEG
         im.save(new_filepath)
+        width, height = im.size # Get final size
     url = os.path.join(STATIC_OUTPUT_DIR, new_filename)
     return url, width, height
 

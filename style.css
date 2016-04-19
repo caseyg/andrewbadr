@@ -72,6 +72,9 @@ header .content {
 
 .project {
 	margin: 0 0 15px;
+  background-color: #fcfcfc;
+  line-height: 0;
+  padding: 4px;
 }
 
 .project p:first-child {
