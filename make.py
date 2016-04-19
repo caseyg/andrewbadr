@@ -42,6 +42,7 @@ def ratio_matches((w1, h1), (w2, h2)):
     return w1*h2 == w2*h1
 
 def process_image(project_name, image_path, size_name):
+    # TODO: make filename depend on hash so we detect changes
     outdir = here(STATIC_OUTPUT_DIR)
     _, filename = os.path.split(image_path)
     base, ext = os.path.splitext(filename)
