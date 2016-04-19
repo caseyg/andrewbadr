@@ -39,8 +39,6 @@ def ordered_load_yaml(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict)
 #]
 
 def ratio_matches((w1, h1), (w2, h2)):
-    print w1*h2, w2*h1
-    print w1*h2 == w2*h1
     return w1*h2 == w2*h1
 
 def process_image(project_name, image_path, size_name):
@@ -89,6 +87,8 @@ def load_featured_project(project_name):
     # to control the display order.
     for filename in sorted(os.listdir(image_dir)):
         if filename == 'thumb.jpg':
+            continue
+        if filename.startswith('_'):
             continue
         image_path = os.path.join(image_dir, filename)
         url, w, h = process_image(project_name, image_path, 'featured')
@@ -140,7 +140,6 @@ def create_index_html():
         'featured_projects': featured_projects,
         'small_projects': small_projects
     }
-    print context
     outfile = here('index.html')
     output = template.render(context)
     with codecs.open(outfile, 'w', 'utf8') as f:
