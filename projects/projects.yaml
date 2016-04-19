@@ -6,7 +6,7 @@ Featured:
  
 Small:
     hunter:
-        text: "Hunter MFA"
+        text: "Hunter College"
         url: "http://www.hunter.cuny.edu/main/"
     amore:
         text: "Amore Explainer"
@@ -17,9 +17,9 @@ Small:
     scribble:
         text: "Scribble"
         url: "http://www.andrewbadr.com/files/scribble/"
-    friendship:
-        text: "Friendship Protocol"
-        url: "https://npdoty.name/friendship/friendship.html"
+    #friendship:
+    #    text: "Friendship Protocol"
+    #    url: "https://npdoty.name/friendship/friendship.html"
     #bloomberg-bitcoin-press:
     #    text: "Bitcoin Quote"
     #    url: "http://www.bloomberg.com/news/articles/2014-03-31/what-your-accountant-thinks-about-your-bitcoins"
@@ -33,12 +33,12 @@ Small:
         # make featured??
         text: "Joanna Newsom Lyrics"
         url: "http://joannanewsomlyrics.com/"
-    analog-go:
-        text: "Analog Go"
-        url: "https://github.com/reverie/analog-go"
-    oysters:
-        text: "Slurp Champ"
-        url: "http://sf.eater.com/2011/6/15/6674805/slurp-champ-downs-105-oysters-at-woodhouse-fish-co#4290236"
+    #analog-go:
+    #    text: "Analog Go"
+    #    url: "https://github.com/reverie/analog-go"
+    #oysters:
+    #    text: "Slurp Champ"
+    #    url: "http://sf.eater.com/2011/6/15/6674805/slurp-champ-downs-105-oysters-at-woodhouse-fish-co#4290236"
     zerocater:
         text: "ZeroCater"
         url: "https://zerocater.com/"
@@ -54,8 +54,8 @@ Small:
     illinois:
         text: "CS@UIUC"
         url: "https://cs.illinois.edu/"
-    bugtraq:
-        text: "Wolfram Bugtraq"
+    wolfram:
+        text: "Bugtraq"
         url: "http://seclists.org/bugtraq/2002/Jun/180"
 
 # Not including:

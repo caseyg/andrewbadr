@@ -127,7 +127,10 @@ header .content {
   display: inline-block; /* bigger target */
   text-decoration: none;
   line-height: 0; /* Get rid of space at bottom for hover */
-  padding-right: .5em
+  background-color: #fcfcfc;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* TODO: nice flexbox flow */
 }
 
 .projects-more a:hover {

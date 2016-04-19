@@ -1,0 +1,1 @@
+convert trimmed.png -background transparent -gravity center -extent 110x110 pad_extent.gif
