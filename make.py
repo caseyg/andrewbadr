@@ -46,8 +46,8 @@ def ratio_matches((w1, h1), (w2, h2)):
 def process_image(project_name, image_path, size_name):
     outdir = here(STATIC_OUTPUT_DIR)
     _, filename = os.path.split(image_path)
-    base, _ = os.path.splitext(filename)
-    new_filename = "%s_%s_%s.jpg" % (project_name, base, size_name)
+    base, ext = os.path.splitext(filename)
+    new_filename = "%s_%s_%s%s" % (project_name, base, size_name, ext.lower())
     new_filepath = os.path.join(outdir, new_filename)
     if os.path.exists(new_filepath):
         print "Existing", new_filepath, "..."
@@ -67,8 +67,8 @@ def process_image(project_name, image_path, size_name):
             assert size_name == 'featured' #:>
         width, height = size
         im.thumbnail(size, Image.ANTIALIAS)
-        im = im.convert('RGB') # RGB for JPEG
-        im.save(new_filepath, "JPEG")
+        #im = im.convert('RGB') # RGB for JPEG
+        im.save(new_filepath)
     url = os.path.join(STATIC_OUTPUT_DIR, new_filename)
     return url, width, height
 

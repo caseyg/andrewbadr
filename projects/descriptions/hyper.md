@@ -1,0 +1,5 @@
+The [DFA](https://en.wikipedia.org/wiki/Deterministic_finite_automaton) is a simple model of computation central to theoretical computer science. Following an office hours discussion with Prof. Lenny Pitt at Illinois, I pursued and eventaully solved a nice generalization of [classic DFA minimization](https://en.wikipedia.org/wiki/DFA_minimization) wherein the minimized DFA can differ from the original on any finite set of inputs. The results were presented in my paper [**Hyper-minimization in O(n<sup>2</sup>)**](http://www.andrewbadr.com/files/hyper/ciaa32.pdf) at [CIAA](https://en.wikipedia.org/wiki/Conference_on_Implementation_and_Application_of_Automata) 2008.
+
+(In one of those coincidences of discovery, I reached the initial theorems at the same time as a professor in Slovakia. We ended up co-publishing [a different version](http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=8238099&fileId=S0988375407000616) of the paper.)
+
+The work has since been [improved and extended to more models of computation](https://scholar.google.com/scholar?cites=1356604340288282132&as_sdt=5,33&sciodt=0,33&hl=en).

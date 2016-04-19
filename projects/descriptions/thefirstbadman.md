@@ -1,1 +1,1 @@
-Here's a fine description of my workk
+I implemented the website for Miranda July's "[**The First Bad Man**](http://thefirstbadman.com/)". Visitors were able to bid on real-world versions of objects mentioned in the novel, with all proceeds going to charity. The project was [covered in the New York Times](http://www.nytimes.com/2015/01/10/arts/miranda-july-blurs-fiction-and-reality-to-promote-a-novel.html).

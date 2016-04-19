@@ -20,9 +20,9 @@ Small:
     friendship:
         text: "Friendship Protocol"
         url: "https://npdoty.name/friendship/friendship.html"
-    bloomberg-bitcoin-press:
-        text: "Bitcoin Quote"
-        url: "http://www.bloomberg.com/news/articles/2014-03-31/what-your-accountant-thinks-about-your-bitcoins"
+    #bloomberg-bitcoin-press:
+    #    text: "Bitcoin Quote"
+    #    url: "http://www.bloomberg.com/news/articles/2014-03-31/what-your-accountant-thinks-about-your-bitcoins"
     fornowband:
         text: "For Now"
         url: "http://www.fornowband.org/"
